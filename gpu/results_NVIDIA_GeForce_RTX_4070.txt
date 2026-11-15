@@ -1,0 +1,32 @@
+# GPU: NVIDIA GeForce RTX 4070, 610.88
+# nvcc: Build cuda_13.3.r13.3/compiler.38244171_0
+mode=naive BS=8 kernel=0.001572 s  h2d=0.002055 s  d2h=0.003324 s  checksum=21733638588
+mode=naive BS=8 kernel=0.002079 s  h2d=0.001996 s  d2h=0.002541 s  checksum=21733638588
+mode=naive BS=8 kernel=0.002106 s  h2d=0.002018 s  d2h=0.018504 s  checksum=21733638588
+mode=naive BS=8 kernel=0.002474 s  h2d=0.001923 s  d2h=0.002881 s  checksum=21733638588
+mode=naive BS=8 kernel=0.001547 s  h2d=0.002087 s  d2h=0.002743 s  checksum=21733638588
+mode=tiled BS=8 kernel=0.001265 s  h2d=0.001892 s  d2h=0.002573 s  checksum=21733638588
+mode=tiled BS=8 kernel=0.001281 s  h2d=0.002192 s  d2h=0.004192 s  checksum=21733638588
+mode=tiled BS=8 kernel=0.001586 s  h2d=0.002323 s  d2h=0.002815 s  checksum=21733638588
+mode=tiled BS=8 kernel=0.001274 s  h2d=0.001942 s  d2h=0.002808 s  checksum=21733638588
+mode=tiled BS=8 kernel=0.001274 s  h2d=0.002109 s  d2h=0.002517 s  checksum=21733638588
+mode=naive BS=16 kernel=0.001252 s  h2d=0.001918 s  d2h=0.002780 s  checksum=21733638588
+mode=naive BS=16 kernel=0.001861 s  h2d=0.001926 s  d2h=0.003044 s  checksum=21733638588
+mode=naive BS=16 kernel=0.001284 s  h2d=0.002073 s  d2h=0.002552 s  checksum=21733638588
+mode=naive BS=16 kernel=0.001291 s  h2d=0.002380 s  d2h=0.004473 s  checksum=21733638588
+mode=naive BS=16 kernel=0.001247 s  h2d=0.001857 s  d2h=0.002470 s  checksum=21733638588
+mode=tiled BS=16 kernel=0.001699 s  h2d=0.001957 s  d2h=0.003530 s  checksum=21733638588
+mode=tiled BS=16 kernel=0.001294 s  h2d=0.001967 s  d2h=0.002955 s  checksum=21733638588
+mode=tiled BS=16 kernel=0.000969 s  h2d=0.001983 s  d2h=0.003044 s  checksum=21733638588
+mode=tiled BS=16 kernel=0.000993 s  h2d=0.002260 s  d2h=0.002841 s  checksum=21733638588
+mode=tiled BS=16 kernel=0.000968 s  h2d=0.001959 s  d2h=0.004309 s  checksum=21733638588
+mode=naive BS=32 kernel=0.001293 s  h2d=0.002136 s  d2h=0.003641 s  checksum=21733638588
+mode=naive BS=32 kernel=0.001844 s  h2d=0.002435 s  d2h=0.002564 s  checksum=21733638588
+mode=naive BS=32 kernel=0.001314 s  h2d=0.002042 s  d2h=0.002443 s  checksum=21733638588
+mode=naive BS=32 kernel=0.001283 s  h2d=0.001997 s  d2h=0.002549 s  checksum=21733638588
+mode=naive BS=32 kernel=0.001688 s  h2d=0.002199 s  d2h=0.002596 s  checksum=21733638588
+mode=tiled BS=32 kernel=0.001282 s  h2d=0.001974 s  d2h=0.002878 s  checksum=21733638588
+mode=tiled BS=32 kernel=0.001268 s  h2d=0.002261 s  d2h=0.003924 s  checksum=21733638588
+mode=tiled BS=32 kernel=0.001250 s  h2d=0.002140 s  d2h=0.003431 s  checksum=21733638588
+mode=tiled BS=32 kernel=0.001266 s  h2d=0.001942 s  d2h=0.002393 s  checksum=21733638588
+mode=tiled BS=32 kernel=0.001713 s  h2d=0.002370 s  d2h=0.002343 s  checksum=21733638588
