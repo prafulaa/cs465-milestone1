@@ -66,7 +66,6 @@ nvcc -arch=native -DBS=16 mm.cu -o mm16
 | `gpu/gpu_chart.png` | Chart used on the slides |
 | `gpu/results_NVIDIA_GeForce_RTX_4070.txt` | Raw data, reported session |
 | `gpu/results_NVIDIA_GeForce_RTX_4070_run1.txt` | Raw data, first session (reproducibility) |
-| `gpu/NOTES.md` | Environment details, run-to-run comparison, method notes |
 | `gpu/mm_windows_test.cu` | Native Windows cross-check build (QueryPerformanceCounter shim) |
 | `gpu/build_windows.bat` | Build recipe for the native Windows cross-check |
 
