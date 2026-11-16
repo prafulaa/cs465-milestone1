@@ -20,7 +20,8 @@ Other threads will be added by their owners.
 - **Toolchain:** CUDA toolkit 13.3 (`nvcc`), gcc 13.3, Ubuntu 24.04 under WSL2
 - **Problem:** C = A × B, 1024×1024 floats, `srand(10)` then `(float)(rand() % 10)`
   (values 0–9 keep every partial sum ≤ 1024×81 = 82,944, exactly representable in
-  float, so GPU and CPU results match bit-for-bit)
+  float, so GPU and CPU results match bit-for-bit). Two CUDA versions, per the
+  handout: with and without tiling/blocking (shared-memory tiles).
 - **Timing:** `clock_gettime(CLOCK_MONOTONIC)` around the kernel launch +
   `cudaDeviceSynchronize()` only — matrix initialization and PCIe copies are
   excluded, per the handout. A non-timed warm-up launch precedes each timed launch.
@@ -30,15 +31,18 @@ Other threads will be added by their owners.
 
 ### Results (kernel time, average of 5 runs)
 
-| Block size | Naive | Tiled (shared memory) | Speedup |
+| Block size | Without tiling/blocking | With tiling/blocking | Speedup |
 |---|---|---|---|
 | 8×8 | 1.956 ms | 1.336 ms | 1.46× |
 | 16×16 | **1.387 ms** | **1.185 ms** | 1.17× |
 | 32×32 | 1.484 ms | 1.356 ms | 1.09× |
 
-**Answer to handout Q4 (this GPU):** best block size is **16×16** for both naive and
-tiled; tiling gives ~1.1–1.5×. PCIe copies (untimed): ~2.1 ms HtoD + ~3.5 ms DtoH —
-together larger than the kernel itself.
+**Answer to handout Q4 (this GPU):** the optimal block size is **16×16** for both
+the version without tiling/blocking and the version with it; tiling/blocking gives
+~1.1–1.5×. The gain is smaller than the classic textbook 2–4× because both input
+matrices (8 MB each) fit entirely in the RTX 4070's 32 MB L2 cache, so even the
+untiled kernel's reads mostly hit fast cache. PCIe copies (untimed): ~2.1 ms HtoD +
+~3.5 ms DtoH — together larger than the kernel itself.
 
 ## Build and run (Linux / WSL2)
 
